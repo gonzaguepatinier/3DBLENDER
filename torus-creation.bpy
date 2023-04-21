@@ -7,24 +7,38 @@ bpy.ops.object.select_by_type(type='MESH')
 bpy.ops.object.delete()
 
 # Create torus mesh
-major_radius = 2.0  # Major radius of the torus
+major_radius = 20.0  # Major radius of the torus
 minor_radius = 1.0  # Minor radius of the torus
 segments = 32  # Number of segments for the torus
 ring_segments = 16  # Number of ring segments for the torus
 
-bpy.ops.mesh.primitive_torus_add(
-    major_radius=major_radius,
-    minor_radius=minor_radius,
-    location=(0, 0, 0),
-    major_segments=segments,
-    mode='MAJOR_MINOR',
-    minor_segments=ring_segments
+for index in range (1,10) : 
+    bpy.ops.mesh.primitive_torus_add(
+        major_radius=major_radius,
+        minor_radius=minor_radius,
+        location=(index*10, 0, 0),
+        major_segments=segments,
+        mode='MAJOR_MINOR',
+        minor_segments=ring_segments
     )
-
+    Myobj = bpy.context.object
+    Myobj.name = "Taurus" + str(index)
 # Set shading mode to smooth
 
-bpy.ops.object.editmode_toggle()
-bpy.ops.mesh.select_all(action='SELECT')
-bpy.ops.mesh.normals_make_consistent(inside=False)
-bpy.ops.object.editmode_toggle()
-bpy.ops.object.shade_smooth()
+# bpy.ops.object.editmode_toggle()
+# bpy.ops.mesh.select_all(action='SELECT')
+# bpy.ops.mesh.normals_make_consistent(inside=False)
+# bpy.ops.object.editmode_toggle()
+# bpy.ops.object.shade_smooth()
+
+    rotate_x = math.radians(0)  # Rotate 30 degrees along X axis
+    rotate_y = math.radians(90)  # Rotate 45 degrees along Y axis
+    rotate_z = math.radians(0)  # Rotate 60 degrees along Z axis
+
+    # Set the rotation_euler property of the object
+    Myobj.rotation_euler = (rotate_x, rotate_y, rotate_z)
+    # Myobj.location = (15,2,3)
+
+# Update the object to apply the rotation
+# bpy.ops.object.update_tag()
+
