@@ -1,0 +1,30 @@
+import bpy
+import math
+
+# Clear existing mesh objects
+bpy.ops.object.select_all(action='DESELECT')
+bpy.ops.object.select_by_type(type='MESH')
+bpy.ops.object.delete()
+
+# Create torus mesh
+major_radius = 2.0  # Major radius of the torus
+minor_radius = 1.0  # Minor radius of the torus
+segments = 32  # Number of segments for the torus
+ring_segments = 16  # Number of ring segments for the torus
+
+bpy.ops.mesh.primitive_torus_add(
+    major_radius=major_radius,
+    minor_radius=minor_radius,
+    location=(0, 0, 0),
+    major_segments=segments,
+    mode='MAJOR_MINOR',
+    minor_segments=ring_segments
+    )
+
+# Set shading mode to smooth
+
+bpy.ops.object.editmode_toggle()
+bpy.ops.mesh.select_all(action='SELECT')
+bpy.ops.mesh.normals_make_consistent(inside=False)
+bpy.ops.object.editmode_toggle()
+bpy.ops.object.shade_smooth()
