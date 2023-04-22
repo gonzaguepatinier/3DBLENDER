@@ -42,3 +42,10 @@ for index in range (1,10) :
 # Update the object to apply the rotation
 # bpy.ops.object.update_tag()
 
+for frame_num in range (1,10):
+    # bpy.context.scene.frame_set(frame_num*10)
+    Myobj.keyframe_insert(data_path="location", frame = frame_num*10, index=-1)
+    # bpy.ops.object.select_all(action='DESELECT')
+    # bpy.data.objects["Taurus9"].select_set(True)
+    Myobj = bpy.data.objects["Taurus9"]
+    Myobj.location= (100+frame_num*10,0,0)
