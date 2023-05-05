@@ -7,8 +7,8 @@ bpy.ops.object.select_by_type(type='MESH')
 bpy.ops.object.delete()
 
 # Create torus mesh
-major_radius = 20.0  # Major radius of the torus
-minor_radius = 1.0  # Minor radius of the torus
+major_radius = 10.0  # Major radius of the torus
+minor_radius = 0.5  # Minor radius of the torus
 segments = 32  # Number of segments for the torus
 ring_segments = 16  # Number of ring segments for the torus
 
@@ -42,7 +42,7 @@ for index in range (1,10) :
 # Update the object to apply the rotation
 # bpy.ops.object.update_tag()
 
-for frame_num in range (1,10):
+for frame_num in range (0,10):
     # bpy.context.scene.frame_set(frame_num*10)
     Myobj.keyframe_insert(data_path="location", frame = frame_num*10, index=-1)
     # bpy.ops.object.select_all(action='DESELECT')
