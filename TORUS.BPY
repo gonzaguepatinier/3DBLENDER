@@ -16,7 +16,7 @@ bpy.ops.mesh.primitive_torus_add(
     major_radius=major_radius,
     minor_radius=minor_radius,
     location=(0, 0, 0),
-    segments=segments,
+    major_segments=segments,
     ring_mode='Y',
     ring_segments=ring_segments
 )
