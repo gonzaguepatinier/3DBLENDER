@@ -36,21 +36,27 @@ class Layer:
         print(f'Layer {self.layer_number} - {self.grid_size}x{self.grid_size}', self.layer_number)
         # for row in self.grid:
         #     print(row)
-        x = 0
+        x = float(self.layer_number) - 1 
+        # z = 1 + ((self.layer_number - 1 )*2) # Correct Zyy
+        z = (float(self.layer_number) * 2)  - 1.0 
         for row in self.grid:
-            x = x + 2 + self.layer_number -1
-            y = 0 + self.layer_number -1
+            # x = x + float(self.layer_number)*2 - 1.0
+            x = x + 2.0
+            # y = (self.layer_number * 2) -1
+            # y = self.layer_number 
+            y = float(self.layer_number) + 1.0
             for item in row:
-                y = y +2
+                y = y + 2.0
                 if item is None:
                     print('-', end='')
                 else:
+                    print(f'x: {x} y: {y} z: {z}')
                     if item.quality == StoneQuality.HIGH:
-                        bpy.ops.mesh.primitive_cube_add(location=(x,y,self.layer_number))
-                        # print('H', end='')
+                        bpy.ops.mesh.primitive_cube_add(location=(x,y,z))
+                        print('H', end='')
                     if item.quality == StoneQuality.LOW:
-                        bpy.ops.mesh.primitive_cube_add(location=(x,y,self.layer_number))
-                        # print('L', end='')
+                        bpy.ops.mesh.primitive_cube_add(location=(x,y,z))
+                        print('L', end='')
                   
             print("\n")
 

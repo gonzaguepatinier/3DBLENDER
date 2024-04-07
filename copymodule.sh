@@ -1,4 +1,5 @@
+#!/bin/bash
 
-cp ./layer.py /Applications/Blender.app/Contents/Resources/3.6/scripts/modules
-cp ./stone.py /Applications/Blender.app/Contents/Resources/3.6/scripts/modules
-cp ./pyramid.py /Applications/Blender.app/Contents/Resources/3.6/scripts/modules
+cp -f ./layer.py /Applications/Blender-36.app/Contents/Resources/3.6/scripts/modules/
+cp -f ./stone.py /Applications/Blender-36.app/Contents/Resources/3.6/scripts/modules/
+cp -f ./pyramid.py /Applications/Blender-36.app/Contents/Resources/3.6/scripts/modules/
