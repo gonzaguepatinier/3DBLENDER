@@ -1,6 +1,8 @@
 import bpy
 from random import randint
 # bpy.ops.mesh.primitive_cube_add()
+# How to run script
+
 
 # count = 5
 # for c in range(0,count):

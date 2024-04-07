@@ -22,10 +22,7 @@ class Stone:
     number: int = None
     layer: int = None
 
-    def quarry_stone(self, quality: StoneQuality, number: int):
-        self.quality = quality
-        self.number = number
-        return
+ 
     
     def transport_stone(self, new_location: StoneLocation) -> None:
         self.location = new_location
@@ -39,3 +36,10 @@ class Stone:
         self.y = y
         self.layer = layer_number
         return True
+
+
+def quarry_stone(quality: StoneQuality, number: int) -> Stone:
+        stone = Stone()
+        stone.quality = quality
+        stone.number = number
+        return (stone)

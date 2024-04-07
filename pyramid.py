@@ -17,6 +17,11 @@ class Pyramid:
     def display_pyramid(self) -> None:
         for layer in self.layer:
             layer.display_layer()
+    
+    def display3d_pyramid(self) -> None:
+        for layer in self.layer:
+            layer.display3d_layer()
+
     def display_pyramid_layer(self, layer_number: int) -> None:
             self.layer[layer_number-1].display_layer()
 
